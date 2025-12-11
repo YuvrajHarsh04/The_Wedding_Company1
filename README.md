@@ -8,7 +8,7 @@ Built as part of a Frontend Assignment, this app showcases smooth UI transitions
 
 ---
 
-## 📦 Setup Instructions
+## Setup Instructions
 
 Follow these steps to run the project locally:
 
@@ -54,7 +54,7 @@ http://localhost:3000
 - Progress indicators  
 - Final result screen with animated score  
 
-### 🔁 Restart Option
+### Restart Option
 - Restart the quiz anytime to play again  
 
 ---
