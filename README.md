@@ -45,18 +45,34 @@ Built as part of a Frontend Assignment, this app showcases smooth UI transitions
 
 ---
 
-##Folder Structure (Simplified)
+##Folder Structure
 
 my-app/
 │── app/
+
+
 │ ├── page.tsx # Main quiz UI
+
+
 │ ├── layout.tsx # Root layout
+
+
 │ ├── globals.css # Global styles
+
+
 │
 │── public/ # Static assets
+
+
 │── package.json
+
+
 │── tsconfig.json
+
+
 │── postcss.config.mjs
+
+
 │── tailwind.config.js
 
 ## Deployment (Vercel)
