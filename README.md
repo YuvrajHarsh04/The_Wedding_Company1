@@ -8,6 +8,31 @@ Built as part of a Frontend Assignment, this app showcases smooth UI transitions
 
 ---
 
+## 📦 Setup Instructions
+
+Follow these steps to run the project locally:
+
+### 1️⃣ Clone the repository
+
+git clone https://github.com/YuvrajHarsh04/The_Wedding_Company1.git
+
+Navigate into the project directory
+
+cd my-app
+
+Install dependencies
+
+npm install
+
+Start the development server
+
+npm run dev
+
+Open the app in your browser
+
+http://localhost:3000
+
+
 ## Features
 
 ### Beautiful & Responsive UI
@@ -31,6 +56,15 @@ Built as part of a Frontend Assignment, this app showcases smooth UI transitions
 
 ### 🔁 Restart Option
 - Restart the quiz anytime to play again  
+
+---
+
+## Assumptions Made
+The quiz does not require backend integration; all questions are static and stored locally.
+No authentication or user account system is needed.
+Accessibility is partially implemented but not fully WCAG compliant due to assignment time constraints.
+Deployment is handled through Vercel, which supports Next.js natively.
+The assignment expects animation quality and UI design as a key evaluation factor.
 
 ---
 
@@ -76,8 +110,12 @@ my-app/
 
 │── tailwind.config.js
 
-## Deployment (Vercel)
-This project is optimized for Vercel, the best deployment platform for Next.js.
+## Time Spent on the Assignment
+Total Time: ~5 hours
 
-npm i -g vercel
-vercel
+UI Planning & Layout Structure: 45 minutes
+Component Development & State Logic: 1.5 hours
+TailwindCSS Styling: 1 hour
+Framer Motion Animations: 45 minutes
+Bug Fixes & Testing: 30 minutes
+GitHub Setup + Vercel Deployment: 30 minutes
