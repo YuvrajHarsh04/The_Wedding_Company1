@@ -12,23 +12,23 @@ Built as part of a Frontend Assignment, this app showcases smooth UI transitions
 
 Follow these steps to run the project locally:
 
-### 1️⃣ Clone the repository
+### Clone the repository
 
 git clone https://github.com/YuvrajHarsh04/The_Wedding_Company1.git
 
-Navigate into the project directory
+1. Navigate into the project directory - 
 
 cd my-app
 
-Install dependencies
+2. Install dependencies - 
 
 npm install
 
-Start the development server
+3. Start the development server - 
 
 npm run dev
 
-Open the app in your browser
+4. Open the app in your browser - 
 
 http://localhost:3000
 
