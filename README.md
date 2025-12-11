@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Deyployment - https://the-wedding-company1-fap8uy05m-yuvrajs-projects-c615dce8.vercel.app
 
-## Getting Started
+#The Wedding Company
 
-First, run the development server:
+An elegant, modern, and animated **Next.js Quiz Application**, crafted for an engaging user experience.  
+Built as part of a Frontend Assignment, this app showcases smooth UI transitions, responsive design, and clean code architecture using **Next.js, TypeScript, TailwindCSS, and Framer Motion**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Beautiful & Responsive UI
+- Fully responsive design across all devices  
+- Soft gradients, elegant typography, and clean interface  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Smooth Animations
+- Powered by **Framer Motion**  
+- Animated transitions between questions  
+- Button hover/tap animations  
 
-## Learn More
+### Cute Animated Mascot
+- Animated cat illustration on the first question  
+- Friendly “Best of Luck!” speech bubble  
 
-To learn more about Next.js, take a look at the following resources:
+### Quiz Functionality
+- Multiple-choice questions  
+- Automatic score calculation  
+- Progress indicators  
+- Final result screen with animated score  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔁 Restart Option
+- Restart the quiz anytime to play again  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+##Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Category | Technology |
+|---------|------------|
+| Framework | **Next.js 14+ (App Router)** |
+| Language | **TypeScript** |
+| Styling | **TailwindCSS** |
+| Animations | **Framer Motion** |
+| Icons | **Lucide React** |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+##Folder Structure (Simplified)
+
+my-app/
+│── app/
+│ ├── page.tsx # Main quiz UI
+│ ├── layout.tsx # Root layout
+│ ├── globals.css # Global styles
+│
+│── public/ # Static assets
+│── package.json
+│── tsconfig.json
+│── postcss.config.mjs
+│── tailwind.config.js
+
+## Deployment (Vercel)
+This project is optimized for Vercel, the best deployment platform for Next.js.
+
+npm i -g vercel
+vercel
