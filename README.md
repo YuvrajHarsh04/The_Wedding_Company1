@@ -1,6 +1,7 @@
 Deyployment - https://the-wedding-company1-fap8uy05m-yuvrajs-projects-c615dce8.vercel.app
 
-#The Wedding Company
+![Download Image](https://github.com/YuvrajHarsh04/The_Wedding_Company1/blob/main/public/5993.jpg?raw=true)
+# The Wedding Company
 
 An elegant, modern, and animated **Next.js Quiz Application**, crafted for an engaging user experience.  
 Built as part of a Frontend Assignment, this app showcases smooth UI transitions, responsive design, and clean code architecture using **Next.js, TypeScript, TailwindCSS, and Framer Motion**.
@@ -33,7 +34,7 @@ Built as part of a Frontend Assignment, this app showcases smooth UI transitions
 
 ---
 
-##Tech Stack
+## Tech Stack
 
 | Category | Technology |
 |---------|------------|
@@ -45,7 +46,7 @@ Built as part of a Frontend Assignment, this app showcases smooth UI transitions
 
 ---
 
-##Folder Structure
+## Folder Structure
 
 my-app/
 │── app/
