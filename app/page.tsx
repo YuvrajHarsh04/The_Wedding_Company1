@@ -98,7 +98,7 @@ const App: React.FC = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="relative w-full max-w-5xl"
           >
-            {/* Cat Character with Speech Bubble - Only on first question */}
+            {/* Paw Character with Speech Bubble - Only on first question */}
             <AnimatePresence>
               {isFirstQuestion && (
                 <motion.div
@@ -106,61 +106,41 @@ const App: React.FC = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.4, delay: 0.2 }}
-                  className="absolute -left-24 bottom-24 z-10"
+                  className="absolute -left-4 bottom-32 z-10 flex flex-col items-start"
                 >
                   {/* Speech Bubble */}
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.3, delay: 0.5, type: "spring", stiffness: 200 }}
-                    className="relative bg-white rounded-2xl shadow-lg px-5 py-3 mb-3 border-2 border-cyan-300"
+                    className="relative bg-white rounded-2xl shadow-md px-5 py-2.5 mb-2 border-2 border-cyan-300"
                   >
-                    <p className="text-lg font-bold text-gray-800" style={{ fontFamily: 'Comic Sans MS, cursive' }}>
+                    <p className="text-base font-bold text-gray-800" style={{ fontFamily: 'Comic Sans MS, cursive' }}>
                       Best of Luck!
                     </p>
                     {/* Tail */}
-                    <div className="absolute -bottom-3 left-12 w-6 h-6 bg-white border-b-2 border-r-2 border-cyan-300 transform rotate-45"></div>
+                    <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white border-b-2 border-r-2 border-cyan-300 transform rotate-45"></div>
                   </motion.div>
                   
-                  {/* Cat Illustration */}
+                  {/* Paw Illustration */}
                   <motion.div
-                    className="ml-4"
+                    className="ml-2"
                     animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                   >
-                    <svg width="120" height="140" viewBox="0 0 120 140" fill="none">
-                      {/* Cat Body/Head */}
-                      <ellipse cx="60" cy="80" rx="45" ry="50" fill="#F5F5F5" stroke="#E0E0E0" strokeWidth="2"/>
-                      
-                      {/* Cat Face Features */}
-                      <ellipse cx="45" cy="75" rx="6" ry="8" fill="#333"/>
-                      <ellipse cx="75" cy="75" rx="6" ry="8" fill="#333"/>
-                      
-                      {/* Nose */}
-                      <path d="M60 85 L55 90 L65 90 Z" fill="#FFB6C1"/>
-                      
-                      {/* Mouth */}
-                      <path d="M60 90 Q50 95 45 92" stroke="#333" strokeWidth="2" fill="none"/>
-                      <path d="M60 90 Q70 95 75 92" stroke="#333" strokeWidth="2" fill="none"/>
-                      
-                      {/* Whiskers */}
-                      <line x1="30" y1="80" x2="10" y2="78" stroke="#999" strokeWidth="1.5"/>
-                      <line x1="30" y1="85" x2="10" y2="87" stroke="#999" strokeWidth="1.5"/>
-                      <line x1="90" y1="80" x2="110" y2="78" stroke="#999" strokeWidth="1.5"/>
-                      <line x1="90" y1="85" x2="110" y2="87" stroke="#999" strokeWidth="1.5"/>
-                      
-                      {/* Collar */}
-                      <ellipse cx="60" cy="115" rx="30" ry="8" fill="#FF6B9D"/>
-                      <circle cx="60" cy="115" r="4" fill="#FFD700"/>
-                    </svg>
-                  </motion.div>
+                    <img 
+                      src="/images/749d79faabe3ab4ee8d83233bf1b15aa4471e72b.gif"
+                      alt="Cute paw" 
+                      className="w-30 h-30"
+                    />
+                  </motion.div> 
                 </motion.div>
               )}
             </AnimatePresence>
 
             {/* Main Quiz Card */}
             <motion.div
-              className="bg-white bg-opacity-90 backdrop-blur-sm rounded-[3rem] shadow-2xl p-16 relative"
+              className="bg-white rounded-[2.5rem] shadow-xl p-12 relative border-4 border-blue-200"
               layout
             >
               {/* Header */}
@@ -168,29 +148,36 @@ const App: React.FC = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-center mb-12"
+                className="text-center mb-8"
               >
-                <h1 className="text-6xl font-serif italic text-teal-700 mb-3" style={{ fontFamily: 'Playfair Display, Georgia, serif', fontWeight: 600 }}>
+                <h1 className="text-5xl font-serif italic mb-2" style={{ 
+                  fontFamily: 'Georgia, serif', 
+                  fontWeight: 600,
+                  background: 'linear-gradient(135deg, #0e7490 0%, #06b6d4 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}>
                   Test Your Knowledge
                 </h1>
-                <p className="text-base text-gray-600">Answer all questions to see your results</p>
+                <p className="text-sm text-gray-600">Answer all questions to see your results</p>
               </motion.div>
 
               {/* Progress Indicators */}
-              <div className="flex justify-center items-center gap-4 mb-10">
+              <div className="flex justify-center items-center gap-3 mb-8">
                 {quizQuestions.map((_, index) => (
                   <motion.div
                     key={index}
-                    className={`h-1 rounded-full ${
+                    className={`h-1 rounded-full transition-all duration-300 ${
                       index === currentQuestion
-                        ? 'bg-gray-800'
+                        ? 'bg-gray-900'
                         : index < currentQuestion
-                        ? 'bg-gray-400'
+                        ? 'bg-gray-500'
                         : 'bg-gray-300'
                     }`}
-                    initial={{ width: index === 0 ? 128 : 80 }}
+                    initial={{ width: index === 0 ? 120 : 60 }}
                     animate={{
-                      width: index === currentQuestion ? 128 : 80
+                      width: index === currentQuestion ? 120 : 60
                     }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   />
@@ -205,10 +192,10 @@ const App: React.FC = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.3 }}
-                  className="mb-8"
+                  className="mb-6"
                 >
-                  <div className="text-center py-5 px-8 rounded-2xl bg-cyan-50 border-2 border-cyan-200">
-                    <p className="text-lg text-gray-800 font-medium">
+                  <div className="text-center py-4 px-6 rounded-xl bg-cyan-50 border border-cyan-200">
+                    <p className="text-base text-gray-800 font-medium">
                       {currentQ.id}. {currentQ.question}
                     </p>
                   </div>
@@ -216,7 +203,7 @@ const App: React.FC = () => {
               </AnimatePresence>
 
               {/* Options */}
-              <motion.div className="space-y-5 mb-10 max-w-3xl mx-auto">
+              <motion.div className="space-y-4 mb-8 max-w-2xl mx-auto">
                 <AnimatePresence mode="wait">
                   {currentQ.options.map((option, index) => {
                     const isSelected = selectedAnswers[currentQuestion] === option;
@@ -227,15 +214,14 @@ const App: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.1 }}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
+                        whileHover={{ scale: 1.01 }}
+                        whileTap={{ scale: 0.99 }}
                         onClick={() => handleAnswerSelect(option)}
-                        className={`w-full py-5 px-8 rounded-2xl text-center transition-all duration-300 text-lg font-medium ${
+                        className={`w-full py-4 px-6 rounded-xl text-center transition-all duration-200 text-base font-medium border-2 ${
                           isSelected
-                            ? 'bg-pink-50 border-pink-400 text-gray-800 shadow-lg'
-                            : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100 hover:border-gray-300 hover:shadow-md'
+                            ? 'bg-gray-50 border-gray-800 text-gray-900 shadow-md'
+                            : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100 hover:border-gray-300'
                         }`}
-                        style={{ borderWidth: isSelected ? '3px' : '2px' }}
                       >
                         {option}
                       </motion.button>
@@ -249,32 +235,32 @@ const App: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex justify-center items-center gap-6"
+                className="flex justify-center items-center gap-4"
               >
                 <motion.button
                   onClick={handlePrevious}
                   disabled={isFirstQuestion}
-                  whileHover={!isFirstQuestion ? { scale: 1.1 } : {}}
-                  whileTap={!isFirstQuestion ? { scale: 0.9 } : {}}
-                  className={`p-3 rounded-xl transition-all duration-200 ${
+                  whileHover={!isFirstQuestion ? { scale: 1.05 } : {}}
+                  whileTap={!isFirstQuestion ? { scale: 0.95 } : {}}
+                  className={`p-2.5 rounded-lg transition-all duration-200 ${
                     isFirstQuestion
                       ? 'bg-gray-100 text-gray-300 cursor-not-allowed'
-                      : 'bg-cyan-100 text-teal-700 hover:bg-cyan-200 shadow-sm hover:shadow-md'
+                      : 'bg-cyan-200 text-cyan-900 hover:bg-cyan-300 shadow-sm'
                   }`}
                   aria-label="Previous question"
                 >
-                  <ChevronLeft size={24} strokeWidth={2.5} />
+                  <ChevronLeft size={20} strokeWidth={2.5} />
                 </motion.button>
 
                 {isLastQuestion ? (
                   <motion.button
                     onClick={handleSubmit}
                     disabled={!hasSelectedAnswer}
-                    whileHover={hasSelectedAnswer ? { scale: 1.05 } : {}}
-                    whileTap={hasSelectedAnswer ? { scale: 0.95 } : {}}
-                    className={`px-12 py-3 rounded-xl font-semibold transition-all duration-200 text-base ${
+                    whileHover={hasSelectedAnswer ? { scale: 1.03 } : {}}
+                    whileTap={hasSelectedAnswer ? { scale: 0.97 } : {}}
+                    className={`px-10 py-2.5 rounded-lg font-semibold transition-all duration-200 text-sm ${
                       hasSelectedAnswer
-                        ? 'bg-cyan-200 text-gray-800 hover:bg-cyan-300 shadow-md hover:shadow-lg'
+                        ? 'bg-cyan-200 text-gray-900 hover:bg-cyan-300 shadow-md'
                         : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                     }`}
                   >
@@ -284,16 +270,16 @@ const App: React.FC = () => {
                   <motion.button
                     onClick={handleNext}
                     disabled={!hasSelectedAnswer}
-                    whileHover={hasSelectedAnswer ? { scale: 1.1 } : {}}
-                    whileTap={hasSelectedAnswer ? { scale: 0.9 } : {}}
-                    className={`p-3 rounded-xl transition-all duration-200 ${
+                    whileHover={hasSelectedAnswer ? { scale: 1.05 } : {}}
+                    whileTap={hasSelectedAnswer ? { scale: 0.95 } : {}}
+                    className={`p-2.5 rounded-lg transition-all duration-200 ${
                       hasSelectedAnswer
-                        ? 'bg-cyan-100 text-teal-700 hover:bg-cyan-200 shadow-sm hover:shadow-md'
+                        ? 'bg-cyan-200 text-cyan-900 hover:bg-cyan-300 shadow-sm'
                         : 'bg-gray-100 text-gray-300 cursor-not-allowed'
                     }`}
                     aria-label="Next question"
                   >
-                    <ChevronRight size={24} strokeWidth={2.5} />
+                    <ChevronRight size={20} strokeWidth={2.5} />
                   </motion.button>
                 )}
               </motion.div>
@@ -307,13 +293,13 @@ const App: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="w-full max-w-5xl bg-white bg-opacity-90 backdrop-blur-sm rounded-[3rem] shadow-2xl p-16 text-center"
+            className="w-full max-w-5xl bg-white rounded-[2.5rem] shadow-xl p-16 text-center border-4 border-blue-200"
           >
             <motion.p
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-base text-teal-700 mb-6 font-semibold tracking-wide"
+              className="text-sm text-teal-700 mb-6 font-semibold tracking-wide"
             >
               Keep Learning!
             </motion.p>
@@ -322,8 +308,8 @@ const App: React.FC = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-5xl font-serif italic text-teal-700 mb-10"
-              style={{ fontFamily: 'Playfair Display, Georgia, serif', fontWeight: 600 }}
+              className="text-4xl font-serif italic text-teal-700 mb-10"
+              style={{ fontFamily: 'Georgia, serif', fontWeight: 600 }}
             >
               Your Final score is
             </motion.h2>
@@ -350,7 +336,7 @@ const App: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleRestart}
-              className="px-12 py-3 bg-cyan-200 text-gray-800 rounded-xl font-semibold hover:bg-cyan-300 transition-all shadow-md hover:shadow-lg text-base"
+              className="px-10 py-2.5 bg-cyan-200 text-gray-900 rounded-lg font-semibold hover:bg-cyan-300 transition-all shadow-md text-sm"
             >
               Try Again
             </motion.button>
